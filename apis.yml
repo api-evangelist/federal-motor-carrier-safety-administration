@@ -12,16 +12,15 @@ modified: '2026-03-16'
 position: Consumer
 tags:
   - Federal Government
-  - Transportation
   - Safety
+  - Transportation
 url: >-
   https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
   - aid: federal-motor-carrier-safety-administration:federal-motor-carrier-safety-administration
     name: Federal Motor Carrier Safety Administration
-    tags:
-      - API
+    tags: []
     humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
     properties:
       - url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
