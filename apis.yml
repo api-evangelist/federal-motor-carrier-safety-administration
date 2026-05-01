@@ -8,7 +8,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-12-03'
-modified: '2026-03-16'
+modified: '2026-04-28'
 position: Consumer
 tags:
   - Federal Government
@@ -19,14 +19,23 @@ url: >-
 specificationVersion: '0.19'
 apis:
   - aid: federal-motor-carrier-safety-administration:federal-motor-carrier-safety-administration
-    name: Federal Motor Carrier Safety Administration
-    tags: []
+    name: Federal Motor Carrier Safety Administration QCMobile API
+    tags:
+      - Carriers
+      - Safety
+      - Transportation
     humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+    baseURL: https://mobile.fmcsa.dot.gov/qc/services
     properties:
       - url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
         type: Documentation
+      - url: >-
+          https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/openapi/federal-motor-carrier-safety-administration-openapi.yml
+        type: OpenAPI
     description: >-
-      FMCSA API provides access to commercial motor carrier safety data.
+      The FMCSA QCMobile API provides access to commercial motor carrier safety
+      data including carriers, vehicles, drivers, inspections, and crashes.
+      Authentication uses a WebKey passed as a query parameter on each request.
 common:
   - type: Website
     url: https://www.fmcsa.dot.gov/
