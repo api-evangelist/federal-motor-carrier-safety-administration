@@ -1,0 +1,327 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Federal Motor Carrier Safety Administration QCMobile API
+  description: 'Federal Motor Carrier Safety Administration QCMobile API. 7 operations. Lead operation: Search carriers by
+    name. Self-contained Naftiko capability covering one Federal Motor Carrier Safety Administration business surface.'
+  tags:
+  - Federal Motor Carrier Safety Administration
+  - Federal Motor Carrier Safety Administration QCMobile API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FEDERAL_MOTOR_CARRIER_SAFETY_ADMINISTRATION_API_KEY: FEDERAL_MOTOR_CARRIER_SAFETY_ADMINISTRATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: federal-motor-carrier-safety-administration
+    baseUri: https://mobile.fmcsa.dot.gov/qc/services
+    description: Federal Motor Carrier Safety Administration QCMobile API business capability. Self-contained, no shared references.
+    resources:
+    - name: carriers-name-name
+      path: /carriers/name/{name}
+      operations:
+      - name: searchcarriersbyname
+        method: GET
+        description: Search carriers by name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: carriers-dotNumber
+      path: /carriers/{dotNumber}
+      operations:
+      - name: getcarrierbydotnumber
+        method: GET
+        description: Get carrier by DOT number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    - name: carriers-dotNumber-authority
+      path: /carriers/{dotNumber}/authority
+      operations:
+      - name: getcarrierauthority
+        method: GET
+        description: Get carrier authority
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    - name: carriers-dotNumber-cargo-carried
+      path: /carriers/{dotNumber}/cargo-carried
+      operations:
+      - name: getcarriercargocarried
+        method: GET
+        description: Get cargo carried for a carrier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    - name: carriers-dotNumber-docket-numbers
+      path: /carriers/{dotNumber}/docket-numbers
+      operations:
+      - name: getcarrierdocketnumbers
+        method: GET
+        description: Get docket numbers for a carrier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    - name: carriers-dotNumber-oos
+      path: /carriers/{dotNumber}/oos
+      operations:
+      - name: getcarrieroos
+        method: GET
+        description: Get out-of-service info for a carrier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    - name: carriers-dotNumber-operation-classification
+      path: /carriers/{dotNumber}/operation-classification
+      operations:
+      - name: getcarrieroperationclassification
+        method: GET
+        description: Get operation classification for a carrier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dotNumber
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: apikey
+      key: webKey
+      value: '{{env.FEDERAL_MOTOR_CARRIER_SAFETY_ADMINISTRATION_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: federal-motor-carrier-safety-administration-rest
+    port: 8080
+    description: REST adapter for Federal Motor Carrier Safety Administration QCMobile API. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/carriers/name/{name}
+      name: carriers-name-name
+      description: REST surface for carriers-name-name.
+      operations:
+      - method: GET
+        name: searchcarriersbyname
+        description: Search carriers by name
+        call: federal-motor-carrier-safety-administration.searchcarriersbyname
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}
+      name: carriers-dotnumber
+      description: REST surface for carriers-dotNumber.
+      operations:
+      - method: GET
+        name: getcarrierbydotnumber
+        description: Get carrier by DOT number
+        call: federal-motor-carrier-safety-administration.getcarrierbydotnumber
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}/authority
+      name: carriers-dotnumber-authority
+      description: REST surface for carriers-dotNumber-authority.
+      operations:
+      - method: GET
+        name: getcarrierauthority
+        description: Get carrier authority
+        call: federal-motor-carrier-safety-administration.getcarrierauthority
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}/cargo-carried
+      name: carriers-dotnumber-cargo-carried
+      description: REST surface for carriers-dotNumber-cargo-carried.
+      operations:
+      - method: GET
+        name: getcarriercargocarried
+        description: Get cargo carried for a carrier
+        call: federal-motor-carrier-safety-administration.getcarriercargocarried
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}/docket-numbers
+      name: carriers-dotnumber-docket-numbers
+      description: REST surface for carriers-dotNumber-docket-numbers.
+      operations:
+      - method: GET
+        name: getcarrierdocketnumbers
+        description: Get docket numbers for a carrier
+        call: federal-motor-carrier-safety-administration.getcarrierdocketnumbers
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}/oos
+      name: carriers-dotnumber-oos
+      description: REST surface for carriers-dotNumber-oos.
+      operations:
+      - method: GET
+        name: getcarrieroos
+        description: Get out-of-service info for a carrier
+        call: federal-motor-carrier-safety-administration.getcarrieroos
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/carriers/{dotnumber}/operation-classification
+      name: carriers-dotnumber-operation-classification
+      description: REST surface for carriers-dotNumber-operation-classification.
+      operations:
+      - method: GET
+        name: getcarrieroperationclassification
+        description: Get operation classification for a carrier
+        call: federal-motor-carrier-safety-administration.getcarrieroperationclassification
+        with:
+          dotNumber: rest.dotNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: federal-motor-carrier-safety-administration-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Federal Motor Carrier Safety Administration QCMobile API. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: search-carriers-name
+      description: Search carriers by name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.searchcarriersbyname
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-carrier-dot-number
+      description: Get carrier by DOT number
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarrierbydotnumber
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-carrier-authority
+      description: Get carrier authority
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarrierauthority
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-cargo-carried-carrier
+      description: Get cargo carried for a carrier
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarriercargocarried
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-docket-numbers-carrier
+      description: Get docket numbers for a carrier
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarrierdocketnumbers
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-out-service-info-carrier
+      description: Get out-of-service info for a carrier
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarrieroos
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-operation-classification-carrier
+      description: Get operation classification for a carrier
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-motor-carrier-safety-administration.getcarrieroperationclassification
+      with:
+        dotNumber: tools.dotNumber
+      outputParameters:
+      - type: object
+        mapping: $.
