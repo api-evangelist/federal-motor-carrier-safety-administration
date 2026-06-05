@@ -1,8 +1,8 @@
 # Federal Motor Carrier Safety Administration (federal-motor-carrier-safety-administration)
 
-As the lead federal government agency responsible for regulating and providing safety oversight of commercial motor vehicles (CMVs), FMCSA's mission is to reduce crashes, injuries, and fatalities involving large trucks and buses. FMCSA partners with industry, safety advocates, and state and local governments to keep the nation's roadways safe and improve CMV safety through regulation, education, enforcement, research, and technology.
+As the lead federal government agency responsible for regulating and providing safety oversight of commercial motor vehicles (CMVs), FMCSA's mission is to reduce crashes, injuries, and fatalities involving large trucks and buses.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/apis.yml)
 
 ## Scope
 
@@ -19,7 +19,7 @@ As the lead federal government agency responsible for regulating and providing s
 ## Timestamps
 
 - **Created:** 2024-12-03
-- **Modified:** 2026-04-28
+- **Modified:** 2026-05-19
 
 ## APIs
 
@@ -39,15 +39,17 @@ The FMCSA QCMobile API provides access to commercial motor carrier safety data i
 #### Properties
 
 - [Documentation](https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess)
-- [OpenAPI](openapi/federal-motor-carrier-safety-administration-openapi.yml)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/openapi/federal-motor-carrier-safety-administration-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/federal-motor-carrier-safety-administration.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/federal-motor-carrier-safety-administration.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
+- [LinkedIn](https://www.linkedin.com/company/fmcsa)
 - [Website](https://www.fmcsa.dot.gov/)
 - [Documentation](https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
