@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Federal Motor Carrier Safety Administration QCMobile API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "webKey",
+      "value": "{{webKey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get carrier by DOT number",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get carrier by DOT number"
+    },
+    {
+      "info": {
+        "name": "Search carriers by name",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/name/:name",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Search carriers by name"
+    },
+    {
+      "info": {
+        "name": "Get cargo carried for a carrier",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber/cargo-carried",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get cargo carried for a carrier"
+    },
+    {
+      "info": {
+        "name": "Get operation classification for a carrier",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber/operation-classification",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get operation classification for a carrier"
+    },
+    {
+      "info": {
+        "name": "Get out-of-service info for a carrier",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber/oos",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get out-of-service info for a carrier"
+    },
+    {
+      "info": {
+        "name": "Get docket numbers for a carrier",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber/docket-numbers",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get docket numbers for a carrier"
+    },
+    {
+      "info": {
+        "name": "Get carrier authority",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://mobile.fmcsa.dot.gov/qc/services/carriers/:dotNumber/authority",
+        "params": [
+          {
+            "name": "dotNumber",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get carrier authority"
+    }
+  ],
+  "bundled": true
+}

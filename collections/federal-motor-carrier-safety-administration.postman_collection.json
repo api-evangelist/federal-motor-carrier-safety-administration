@@ -1,0 +1,596 @@
+{
+  "item": [
+    {
+      "id": "95e861ec-8d96-4e56-919e-f155b1c48c35",
+      "name": "Get carrier by DOT number",
+      "request": {
+        "name": "Get carrier by DOT number",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "14d980cc-ca45-4f9e-9bce-d7fe50efaff2",
+          "name": "Carrier record",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c7b4edcb-3084-4cb9-bf9a-c6b22607cb9d",
+      "name": "Search carriers by name",
+      "request": {
+        "name": "Search carriers by name",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            "name",
+            ":name"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "86f9ac11-d572-43d1-8f65-5db247de66f0",
+          "name": "Matching carrier records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                "name",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "64533dc5-ca33-4416-888e-ee150cbbe816",
+      "name": "Get cargo carried for a carrier",
+      "request": {
+        "name": "Get cargo carried for a carrier",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber",
+            "cargo-carried"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "39d799ec-02cd-4dab-8f3d-bb9dfc6c751e",
+          "name": "Cargo carried list",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber",
+                "cargo-carried"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ac6b24e4-c804-42d7-bc55-46ec2a7d7eea",
+      "name": "Get operation classification for a carrier",
+      "request": {
+        "name": "Get operation classification for a carrier",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber",
+            "operation-classification"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "194da3dd-f146-4871-9814-84b0bca4fab4",
+          "name": "Operation classification list",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber",
+                "operation-classification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "cecc5051-aa76-4d08-9b29-adeda18cb3f9",
+      "name": "Get out-of-service info for a carrier",
+      "request": {
+        "name": "Get out-of-service info for a carrier",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber",
+            "oos"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7ba97729-f582-406d-99a5-5fa5a2914f46",
+          "name": "Out-of-service record",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber",
+                "oos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "554ba812-8a22-4c1a-acfd-030873d87eef",
+      "name": "Get docket numbers for a carrier",
+      "request": {
+        "name": "Get docket numbers for a carrier",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber",
+            "docket-numbers"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1cea82e9-2903-4dbb-b833-30e1c96201dc",
+          "name": "Docket numbers",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber",
+                "docket-numbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "6d3bfd6b-fcf7-44cb-895e-1072aad7adbb",
+      "name": "Get carrier authority",
+      "request": {
+        "name": "Get carrier authority",
+        "description": {},
+        "url": {
+          "path": [
+            "carriers",
+            ":dotNumber",
+            "authority"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<integer>",
+              "key": "dotNumber",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "63819ef0-2c4a-4689-bc6c-515ea3870290",
+          "name": "Authority record",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "carriers",
+                ":dotNumber",
+                "authority"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "webKey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dotNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://mobile.fmcsa.dot.gov/qc/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "webKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2560d29d-5a64-4723-9858-b711ff8f6196",
+    "name": "Federal Motor Carrier Safety Administration QCMobile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The FMCSA QCMobile API provides access to commercial motor carrier safety data including carriers, vehicles, drivers, inspections, and crashes. Authentication uses a WebKey passed as a query parameter on each request.\n\nContact Support:\n Name: FMCSA",
+      "type": "text/plain"
+    }
+  }
+}
