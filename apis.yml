@@ -34,6 +34,10 @@ apis:
       The FMCSA QCMobile API provides access to commercial motor carrier safety data including carriers, vehicles,
       drivers, inspections, and crashes. Authentication uses a WebKey passed as a query parameter on each request.
 common:
+  - type: DomainSecurity
+    url: security/federal-motor-carrier-safety-administration-domain-security.yml
+  - type: Authentication
+    url: authentication/federal-motor-carrier-safety-administration-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/fmcsa
   - type: Website
