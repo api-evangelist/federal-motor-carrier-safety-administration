@@ -1,0 +1,14 @@
+{
+  "provider": "federal-motor-carrier-safety-administration",
+  "sources": [
+    "federal-motor-carrier-safety-administration-carriers-api-openapi.yml"
+  ],
+  "outputs": [
+    "federal-motor-carrier-safety-administration-carriers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

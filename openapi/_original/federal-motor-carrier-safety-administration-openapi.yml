@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: Federal Motor Carrier Safety Administration QCMobile API
+  description: >-
+    The FMCSA QCMobile API provides access to commercial motor carrier safety
+    data including carriers, vehicles, drivers, inspections, and crashes.
+    Authentication uses a WebKey passed as a query parameter on each request.
+  version: '1.0'
+  contact:
+    name: FMCSA
+    url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+servers:
+  - url: https://mobile.fmcsa.dot.gov/qc/services
+    description: Production
+security:
+  - WebKey: []
+paths:
+  /carriers/{dotNumber}:
+    get:
+      summary: Get carrier by DOT number
+      operationId: getCarrierByDotNumber
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Carrier record
+  /carriers/name/{name}:
+    get:
+      summary: Search carriers by name
+      operationId: searchCarriersByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Matching carrier records
+  /carriers/{dotNumber}/cargo-carried:
+    get:
+      summary: Get cargo carried for a carrier
+      operationId: getCarrierCargoCarried
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Cargo carried list
+  /carriers/{dotNumber}/operation-classification:
+    get:
+      summary: Get operation classification for a carrier
+      operationId: getCarrierOperationClassification
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Operation classification list
+  /carriers/{dotNumber}/oos:
+    get:
+      summary: Get out-of-service info for a carrier
+      operationId: getCarrierOos
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Out-of-service record
+  /carriers/{dotNumber}/docket-numbers:
+    get:
+      summary: Get docket numbers for a carrier
+      operationId: getCarrierDocketNumbers
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Docket numbers
+  /carriers/{dotNumber}/authority:
+    get:
+      summary: Get carrier authority
+      operationId: getCarrierAuthority
+      parameters:
+        - name: dotNumber
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Authority record
+components:
+  securitySchemes:
+    WebKey:
+      type: apiKey
+      in: query
+      name: webKey
