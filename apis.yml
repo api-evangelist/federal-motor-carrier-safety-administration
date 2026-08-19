@@ -27,7 +27,7 @@ tags:
   - Safety
   - Transportation
 url: https://raw.githubusercontent.com/api-evangelist/federal-motor-carrier-safety-administration/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: >-
     federal-motor-carrier-safety-administration:federal-motor-carrier-safety-administration-carriers-api
