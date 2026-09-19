@@ -53,6 +53,8 @@ apis:
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
   tags:
+  - Carrier
+  tags_raw:
   - Carriers
   properties:
   - type: OpenAPI
